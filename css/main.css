@@ -13,18 +13,12 @@
 	width: 200px;
 	height: 200px;
 	position: absolute;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 1s ease-in;
 }
 
-.front:hover {
-	opacity: 0;
-	-webkit-backface-visibility: hidden; 
-	/*transition: opacity 2s;*/
-	/*transform: rotateY(180deg);*/
-	/*visibility: hidden;*/
-	/*-webkit-transform: rotateY(180deg);*/
-	/*-webkit-transform-style: preserve-3d;*/
-	/*-webkit-transition: -webkit-transform 1s ease-in;*/
-
+.portfolio-item:hover .front {
+	-webkit-transform: rotateY(180deg);
 
 }
 
@@ -33,16 +27,17 @@
 	width: 160px;
 	height: 160px;
 	position: relative;
-	opacity: 0;
-
-
-}
-.back:hover{
-	opacity: 1;
-	-webkit-transform: rotateY(180deg);
-	/*-webkit-transform-style: preserve-3d;*/
-	/*-webkit-backface-visibility: hidden; */
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: rotateY(-180deg);
 	-webkit-transition: -webkit-transform 1s ease-in;
-	/*transition: opacity 2s;*/
 
 }
+.portfolio-item:hover .back{
+	-webkit-transform: rotateY(0deg);
+	-webkit-transition: -webkit-transform 1s ease-in;
+}
+.portfolio-item {
+	-webkit-perspective: 500;
+}
+
+
